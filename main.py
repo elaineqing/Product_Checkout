@@ -1,7 +1,4 @@
 
-from itertools import product
-
-
 class Checkout:
     '''
     class for checkout
@@ -47,6 +44,8 @@ class Checkout:
         '''
         total = 0
         s,m,l = 0,0,0
+
+        #calculated how much small,medium,large has been ordered
         for i in self.item:
             if i == "small pizza":
                 s += 1
@@ -54,9 +53,6 @@ class Checkout:
                 m += 1
             elif i == "large pizza":
                 l += 1
-            else:
-                pass
-
 
         if self.customer == "microsoft":
             total = s//3 * (self.sPizza * 2) + s%3 * self.sPizza + m * self.mPizza + l * self.lPizza       #pricing rule for microsoft (small pizza 3 for 2)
@@ -67,6 +63,7 @@ class Checkout:
         else:
             total =  s * self.sPizza + m * self.mPizza + l * self.lPizza  #no discount
 
+        total = round(total,2)
         print("Total $",total)
         return total
     
