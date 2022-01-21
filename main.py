@@ -35,7 +35,7 @@ class Checkout:
         if itemName.lower() in self.product:
             self.item.append(itemName.lower())
         else:
-            print("No such type of pizza")
+            print("You ordered", itemName,", sorry we dont have such type of pizza")
             # raise NameError("No such type of pizza")
 
     def total(self):
@@ -67,4 +67,10 @@ class Checkout:
         print("Total $",total)
         return total
     
-
+if __name__ == '__main__':
+    co = Checkout("default")
+    co.add("small pizza")
+    co.add("medium pizza")
+    co.add("large pizza")
+    co.add("2 cups of beer, cheers!")
+    co.total()
