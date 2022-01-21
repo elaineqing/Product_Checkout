@@ -59,7 +59,7 @@ class Checkout:
 
 
         if self.customer == "microsoft":
-            total =  s//3 * (self.sPizza * 2) + s%2 * self.sPizza + m * self.mPizza + l * self.lPizza       #pricing rule for microsoft (small pizza 3 for 2)
+            total = s//3 * (self.sPizza * 2) + s%3 * self.sPizza + m * self.mPizza + l * self.lPizza       #pricing rule for microsoft (small pizza 3 for 2)
         elif self.customer == "amazon":
             total = s * self.sPizza + m * self.mPizza + l * 19.99       #special price for large pizza #prcing rule for amazon (large pizza 19.99)
         elif self.customer == "facebook":
@@ -67,7 +67,7 @@ class Checkout:
         else:
             total =  s * self.sPizza + m * self.mPizza + l * self.lPizza  #no discount
 
-        print("The total price is $",total)
+        print("Total $",total)
         return total
     
 

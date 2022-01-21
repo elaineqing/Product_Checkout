@@ -27,21 +27,21 @@ class TestMain(unittest.TestCase):
         co.add('small pizza')
         co.add('medium pizza')
         co.add('large pizza')
-        assert(co.total(),49.97)
+        self.assertEqual(co.total(),49.97)
 
         co = Checkout('Microsoft')
         co.add('small pizza')
-        co.add('Small pizza')
+        co.add('small pizza')
         co.add('small pizza')
         co.add('large pizza')
-        assert(co.total(),45.97)
+        self.assertEqual(co.total(),45.97)
 
         co = Checkout('Amazon')
         co.add('Medium pizza')
         co.add('medium pizza')
         co.add('medium pizza')
         co.add('large pizza')
-        assert(co.total(),67.69)
+        self.assertEqual(co.total(),67.96)
 
 if __name__ == '__main__':
     unittest.main()
