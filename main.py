@@ -11,6 +11,7 @@ class Checkout:
         try:
             customer.lower()
         except:
+            # raise Exception("Name not vaild")
             print("please enter a vaild name")
 
         self.customer = customer.lower() #switch everything to lower case
